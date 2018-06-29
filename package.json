@@ -6,6 +6,11 @@
   "author": "Ben Ellerby",
   "license": "MIT",
   "private": false,
+  "repository" :
+  {
+    "type" : "git",
+    "url" : "https://github.com/Theodo-UK/enzyme-react-seo.git"
+  },
   "devDependencies": {
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1"
