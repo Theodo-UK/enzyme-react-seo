@@ -8,11 +8,12 @@ import SEOAnalyzer from '../src';
 
 const Home = () => (
   <div>
-    <h1>Example</h1>
+    <h1>The quick brown fox jumps over the lazy dog</h1>
   </div>
 );
 
-const analyzer = new SEOAnalyzer(Home, 'examplePage', Enzyme);
+const keywords = ['the', 'quick', 'lazy'];
+const analyzer = new SEOAnalyzer(Home, 'examplePage', Enzyme, keywords);
 
 describe('expect Pass: ExamplePage SEO tests', () => {
   analyzer.getSEOTestSuite();

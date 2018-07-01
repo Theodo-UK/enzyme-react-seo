@@ -26,7 +26,7 @@ describe('ExamplePage SEO tests', () => {
 
 Features:
 - [x] Limit of 1 `<h1>` per page
-- [ ] keyword: appears in h1
+- [x] keywords: appears in h1
 - [ ] keyword: number of time appears
 - [ ] keyword: appears in h2, h3 (?)
 - [ ] keyword: TFIDF
