@@ -1,3 +1,4 @@
+import React from 'react';
 import Enzyme from 'enzyme';
 
 export default class SEOAnalyzer {
@@ -7,7 +8,8 @@ export default class SEOAnalyzer {
   }
 
   getWrappedPage() {
-    return Enzyme.render(this.page);
+    const PageToRender = this.page;
+    return Enzyme.render(<PageToRender />);
   }
 
   getTest(name, conditions) {
