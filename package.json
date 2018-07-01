@@ -1,6 +1,6 @@
 {
   "name": "enzyme-react-seo",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Generic Enzyme test suite SEO analyzer for React web applications",
   "author": "Ben Ellerby",
   "license": "MIT",
