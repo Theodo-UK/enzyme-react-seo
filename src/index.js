@@ -1,10 +1,12 @@
 import React from 'react';
-import Enzyme from 'enzyme';
+
+let Enzyme;
 
 export default class SEOAnalyzer {
-  constructor(PageComponent, pageName) {
+  constructor(PageComponent, pageName, enzyme) {
     this.page = PageComponent;
     this.pageName = pageName;
+    Enzyme = enzyme;
   }
 
   getWrappedPage() {
