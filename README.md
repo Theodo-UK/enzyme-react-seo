@@ -63,4 +63,4 @@ Features:
 ## Publishing 🚀
  - `yarn publish` (contact project owner)
 ## PR's 🙂
- - Very welcom :)
+ - Very welcome :)
