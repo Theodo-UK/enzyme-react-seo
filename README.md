@@ -24,6 +24,14 @@ describe('ExamplePage SEO tests', () => {
 });
 ```
 
+## Issue with babel development
+- When using this test suite it was difficult to keep the install simple without transpiling through babel.
+- Therefore a babel config and `yarn build` command were added.
+- The issue is, on import, projects using babel and importing this library failed due to `"Plugin/Preset files are not allowed to export objects, only functions"`. This a result of this project's dependency on `babel-preset-react`.
+- A quick hack at the moment has been to disable the babel config in the released package.json.
+ - This has been achieved by changing the `babel` key to `babel-off` (in package.json).
+- When building or testing locally this `babel-off` key needs changing to `babel`
+
 Features:
 - [x] Limit of 1 `<h1>` per page
 - [ ] keyword: number of time appears

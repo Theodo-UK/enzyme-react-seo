@@ -29,7 +29,7 @@
     "react-dom": "^16.4.1",
     "react-test-renderer": "^16.4.1"
   },
-  "babel": {
+  "babel-off": {
     "env": {
       "specs": {
         "presets": [
