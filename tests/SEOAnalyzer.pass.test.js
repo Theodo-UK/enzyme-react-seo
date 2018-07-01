@@ -4,7 +4,7 @@ import Enzyme, { configure } from 'enzyme';
 
 configure({adapter: new Adapter()})
 
-import SEOAnalyzer from '../lib';
+import SEOAnalyzer from '../src';
 
 const Home = () => (
   <div>
@@ -14,6 +14,11 @@ const Home = () => (
 
 const analyzer = new SEOAnalyzer(Home, 'examplePage', Enzyme);
 
-describe('ExamplePage SEO tests', () => {
+describe('expect Pass: ExamplePage SEO tests', () => {
+  analyzer.getSEOTestSuite();
+});
+
+
+describe('expect Pass: getH1LimitTest', () => {
   analyzer.getSEOTestSuite();
 });

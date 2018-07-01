@@ -18,12 +18,17 @@ export default class SEOAnalyzer {
     return it(name, conditions);
   }
 
-  getH1LimitTest() {
-    const h1CountLimit = 1;
-    const name = `<${this.pageName}>: Has too many h1 elements. Max ${h1CountLimit} per page`;
+  getH1LimitTestConditions(h1CountLimit) {
     const conditions = () => {
       expect(this.getWrappedPage().find('h1').length).toBe(h1CountLimit);
     };
+    return conditions;
+  }
+
+  getH1LimitTest() {
+    const h1CountLimit = 1;
+    const name = `<${this.pageName}>: Has too many h1 elements. Max ${h1CountLimit} per page`;
+    const conditions = this.getH1LimitTestConditions(h1CountLimit);
     return this.getTest(name, conditions);
   }
 
