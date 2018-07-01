@@ -1,7 +1,7 @@
 # enzyme-react-seo (Work in Progress)
-This is a simple generic test suite to ensure all your React applications meet minimum SEO requirements. This will not help with server side rendering or performance, but will ensure you don't miss things that impact how search engines rank your pages.
+This generic enzyme test suite helps ensure all your React application page components meet minimum SEO requirements. This is not intended to help with server side rendering or performance, but will help ensure you don't miss content or structure issues that impact how search engines rank your pages.
 
-With React is can be difficult to keep in mind the final DOM of a page, duplicate content (even if hidden by CSS), multiple h1 tags per page and missing meta data for example can easily get into production.
+With React is can be difficult to keep in mind the final DOM of a page. For example duplicate content (even if hidden by CSS), multiple h1 tags per page and missing meta data can easily get into production.
 
 ## Requirements
 Have Enzyme and jest setup.
@@ -24,14 +24,6 @@ describe('ExamplePage SEO tests', () => {
 });
 ```
 
-## Issue with babel development
-- When using this test suite it was difficult to keep the install simple without transpiling through babel.
-- Therefore a babel config and `yarn build` command were added.
-- The issue is, on import, projects using babel and importing this library failed due to `"Plugin/Preset files are not allowed to export objects, only functions"`. This a result of this project's dependency on `babel-preset-react`.
-- A quick hack at the moment has been to disable the babel config in the released package.json.
- - This has been achieved by changing the `babel` key to `babel-off` (in package.json).
-- When building or testing locally this `babel-off` key needs changing to `babel`
-
 Features:
 - [x] Limit of 1 `<h1>` per page
 - [ ] keyword: number of time appears
@@ -50,3 +42,25 @@ Features:
 - [ ] Avoid # routing
 - [ ] Prevent no-index
 - [ ] Duplicate Content
+
+# Development
+## Enable babel
+
+## Issue with babel development
+- When using this test suite it was difficult to keep the install simple without transpiling through babel.
+- Therefore a babel config and `yarn build` command were added.
+- The issue is, on import, projects using babel and importing this library failed due to `"Plugin/Preset files are not allowed to export objects, only functions"`. This a result of this project's dependency on `babel-preset-react`.
+- A quick hack at the moment has been to disable the babel config in the released package.json.
+ - This has been achieved by changing the `babel` key to `babel-off` (in package.json).
+- When building or testing locally this `babel-off` key needs changing to `babel`
+- Any help here would be appreciated.
+
+
+## Testing 🔎
+ - `yarn jest`
+## Building 🔨
+ - `yarn build`
+## Publishing 🚀
+ - `yarn publish` (contact project owner)
+## PR's 🙂
+ - Very welcom :)
