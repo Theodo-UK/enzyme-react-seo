@@ -8,6 +8,7 @@ import SEOAnalyzer from '../src';
 
 const Home = () => (
   <div>
+    <img src="./path/to/it/" />
   </div>
 );
 
@@ -35,7 +36,23 @@ const toContainMock = (received, expected) => {
   }
 }
 
-expect.extend({toBe: toBeFailMock, toContain: toContainMock});
+/*
+* Override toContain from expect to revert the pass condition.
+* In this run of the test suite we test the cases where toBe should fail.
+*/
+const toBeDefinedMock = received => {
+  const {pass, message} = expect.toBeDefined(received);
+  return {
+    pass: !pass,
+    message: `NOT: ${message}`,
+  }
+}
+
+expect.extend({
+  toBe: toBeFailMock,
+  toContain: toContainMock,
+  toBeDefined: toBeDefinedMock,
+});
 
 const keywords = ['the', 'quick', 'lazy'];
 const analyzer = new SEOAnalyzer(Home, 'examplePage', Enzyme, keywords);

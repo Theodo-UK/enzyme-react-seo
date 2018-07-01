@@ -36,6 +36,16 @@ export default class SEOAnalyzer {
     return conditions;
   }
 
+  getImgAltTagTestConditions() {
+    const conditions = () => {
+      const imgs = this.getWrappedPage()
+        .find('img')
+        .each((index, img) => expect(img.attribs.alt).toBeDefined());
+    };
+
+    return conditions;
+  }
+
   getH1LimitTest() {
     const h1CountLimit = 1;
     const name = `<${this.pageName}>: Does not have too many H1s. Max ${h1CountLimit} per page`;
@@ -49,8 +59,15 @@ export default class SEOAnalyzer {
     return this.getTest(name, conditions);
   }
 
+  getImgAltTagTest() {
+    const name = `<${this.pageName}>: All imgs have alt tags`;
+    const conditions = this.getImgAltTagTestConditions();
+    return this.getTest(name, conditions);
+  }
+
   getSEOTestSuite() {
     this.getH1LimitTest();
     this.getH1KeywordConentTest();
+    this.getImgAltTagTest();
   }
 }

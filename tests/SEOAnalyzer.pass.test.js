@@ -9,6 +9,7 @@ import SEOAnalyzer from '../src';
 const Home = () => (
   <div>
     <h1>The quick brown fox jumps over the lazy dog</h1>
+    <img src="./path/to/it/" alt="something useful" />
   </div>
 );
 

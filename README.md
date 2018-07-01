@@ -27,11 +27,11 @@ describe('ExamplePage SEO tests', () => {
 Features:
 - [x] Limit of 1 `<h1>` per page
 - [x] keywords: appears in h1
+- [x] alt tags on all img tags
 - [ ] keyword: number of time appears
 - [ ] keyword: appears in h2, h3 (?)
 - [ ] keyword: TFIDF
 - [ ] Outbound links (min and max)
-- [ ] alt tags on images
 - [ ] Meta tag information
 - [ ] Duplicate meta tag information
 - [ ] JSON-LD data
